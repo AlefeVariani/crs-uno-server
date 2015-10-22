@@ -29,15 +29,16 @@ RUN yum -y install apache2
 RUN yum -y install postgresql postgresql-server 
 RUN yum -y install mysql55-mysql.x86_64 mysql55-mysql-server.x86_64
 
+RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-5.rpm
+RUN yum -y install php-pear
+
 ADD oracle-instantclient11.2-basic-11.2.0.4.0-1.i386.rpm /
 ADD oracle-instantclient11.2-devel-11.2.0.4.0-1.i386.rpm /
 
 RUN rpm -Uvh oracle-instantclient11.2-basic-11.2.0.4.0-1.i386.rpm 
 RUN rpm -Uvh oracle-instantclient11.2-devel-11.2.0.4.0-1.i386.rpm 
-RUN yum -y install curl-devel
-
-RUN yum -y install php54w-devel.x86_64 php54w-pear.x86_64
-RUN pecl install oci8
+#RUN pecl install oci8
 
 #RUN yum install -y unzip libaio-dev
 #RUN apt-get clean -y
