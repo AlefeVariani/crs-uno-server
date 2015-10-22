@@ -64,3 +64,4 @@ RUN php -i
 #RUN ls	
 
 EXPOSE 80 443
+
